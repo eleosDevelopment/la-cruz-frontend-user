@@ -1,7 +1,9 @@
 import { auth } from "../utils/firebase";
 import {
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   type User,
 } from "firebase/auth";
@@ -33,6 +35,11 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  const googleSignIn = useCallback(async (): Promise<void> => {
+    const googleProvider = new GoogleAuthProvider();
+    await signInWithPopup(auth, googleProvider);
+  }, []);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUsrFrb(currentUser);
@@ -47,8 +54,9 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       logOut,
       userFrb,
       loader,
+      googleSignIn,
     }),
-    [loginEmail, logOut, userFrb, loader]
+    [loginEmail, logOut, userFrb, loader, googleSignIn]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

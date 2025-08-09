@@ -7,6 +7,7 @@ export interface AuthContextType {
   logOut: () => Promise<void>;
   userFrb: User | null | undefined;
   loader: boolean;
+  googleSignIn: () => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null);

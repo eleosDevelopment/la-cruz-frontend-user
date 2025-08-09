@@ -6,7 +6,7 @@ import AppLayout from "./ui/AppLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <Login />,
   },
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Home />,
       },
     ],

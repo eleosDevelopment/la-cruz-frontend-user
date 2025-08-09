@@ -26,8 +26,8 @@ const Img = styled.img<ImgProps>`
         `;
       case "AppHeader":
         return css`
-          width: 35px;
-          height: 35px;
+          width: 150px;
+          height: 60px;
           object-fit: cover;
         `;
       case "uploadImage":

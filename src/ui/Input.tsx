@@ -9,20 +9,21 @@ const Input = styled.input<InputProps>`
     switch ($layout) {
       case "formType":
         return css`
-          color: var(--color-main-font);
-          border: 2px solid var(--color-alternative);
-          background-color: var(--color-background);
+          color: var(--color-white-smoke);
+          border: 2px solid var(--color-vanilla);
+          background-color: var(--color-prussian-blue);
           border-radius: 25px;
 
           padding: 10px 15px;
           font-size: 1rem;
 
           &:focus {
-            border: 2px solid var(--color-button);
+            border: 2px solid var(--color-orange);
           }
         `;
     }
   }}
+  font-family: inherit;
 `;
 
 export default Input;

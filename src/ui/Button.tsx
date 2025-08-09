@@ -2,7 +2,7 @@ import React, { type ReactNode } from "react";
 import styled, { css } from "styled-components";
 
 interface ButtonProps {
-  $variation?: "submit" | "options" | "addColor" | "deleteObject";
+  $variation?: "submit" | "icons" | "socialButton";
   style?: React.CSSProperties;
   children?: ReactNode;
 }
@@ -13,61 +13,40 @@ const Button = styled.button<ButtonProps>`
     switch ($variation) {
       case "submit":
         return css`
-          background-color: var(--color-button);
-          border: 2px solid var(--color-button);
+          background-color: var(--color-sky-blue);
+          border: 2px solid var(--color-sky-blue);
           border-radius: 25px;
         `;
-      case "options":
+      case "icons":
         return css`
-          background-color: var(--color-alternative);
-          border: 2px solid var(--color-alternative);
-          border-radius: 25px;
-          color: var(--color-main-font);
-
-          padding: 7px 10px;
-          margin: 10px 5px;
-          font-size: 1rem;
-
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          cursor: pointer;
-
-          &:hover {
-            border: 2px solid var(--color-main-font);
-            box-shadow: 0px 0px 5px var(--color-main-font);
-          }
-          & svg {
-            width: 20px;
-            height: 20px;
-            margin: 0px;
-          }
-        `;
-      case "addColor":
-        return css`
-          padding: 5px;
-
-          background-color: var(--color-button);
-          border: 2px solid var(--color-button);
-          border-radius: 50px;
-
-          display: flex;
-          cursor: pointer;
-          & svg {
-            width: 20px;
-            height: 20px;
-          }
-        `;
-      case "deleteObject":
-        return css`
+          margin: 0px 15px;
+          padding: 0px;
           border: none;
           background-color: transparent;
-          color: var(--color-white);
-          width: 10%;
 
-          & svg{
-            color: red;
+          & svg {
+            color: var(--color-vanilla);
+            width: 25px;
+            height: 25px;
+          }
+        `
+      case "socialButton":
+        return css`
+          margin: 10px auto;
+          padding: 8px 15px;
+          color: var(--color-prussian-blue);
+          font-size: 1rem;
+          font-weight: 500;
+
+          background-color: var(--color-white-smoke);
+          border: 2px solid var(--color-white-smoke);
+          border-radius: 5px;
+
+          display: flex;
+          align-items: center;
+
+          & svg {
+            margin-right: 10px;
             height: 20px;
             width: 20px;
           }

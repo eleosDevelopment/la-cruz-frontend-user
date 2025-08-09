@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import useAuth from "../data/useAuth";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Titles from "./Titles";
+import useAuth from "../data/useAuth";
 
 const FullPage = styled.div`
   height: 100vh;
