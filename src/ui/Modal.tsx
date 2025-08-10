@@ -1,8 +1,8 @@
 import React, {
   cloneElement,
   createContext,
-  FC,
-  ReactNode,
+  type FC,
+  type ReactNode,
   useContext,
   useState,
 } from "react";
