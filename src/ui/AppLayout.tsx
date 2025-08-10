@@ -13,8 +13,7 @@ const MainContent = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  margin: 0px;
-  margin-bottom: 25px;
+  margin: 50px auto;
 
   overflow-y: auto;
   overflow-x: hidden;
